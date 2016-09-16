@@ -45,23 +45,24 @@ public class Node {
      * @param node
      * @return
      */
-    public boolean addChild(Node node){
+    public void addChild(Node node){
         if(childs == null){
             childs=new ArrayList<Node>();
         }
         if(node == null){
-            return true;
+            return ;
         }
         if(node.getParent() != null){
             if(node.getParent() == this && childs.contains(node)){
-                return true;
+                return ;
             }else{
-                return false;
+                //实际中应该使用日志或是其他补偿工具
+                System.out.println("该节点已经有其他的父节点");
+                System.exit(1);
             }
         }
         node.setParent(this);
         childs.add(node);
-        return true;
     }
 
     /**
@@ -69,19 +70,23 @@ public class Node {
      * @param node
      * @return
      */
-    public boolean deleteChild(Node node){
+    public void deleteChild(Node node){
         if(node == null){
-            return true;
+            return ;
         }
         if(childs == null || childs.isEmpty()){
-            return false;
+            //实际中应该使用日志或是其他补偿工具
+            System.out.println("该节点没有子节点");
+            System.exit(1);
         }
         if(node.getParent() == this && childs.contains(node)){
             node.setParent(null);
             childs.remove(node);
-            return true;
+            return ;
         }else{
-            return false;
+            //实际中应该使用日志或是其他补偿工具
+            System.out.println("该节点没有该子节点");
+            System.exit(1);
         }
     }
 
@@ -90,23 +95,25 @@ public class Node {
      * @param attribute
      * @return
      */
-    public boolean addAttribute(Attribute attribute){
+    public void addAttribute(Attribute attribute){
         if(attributes == null){
             attributes=new HashMap<String,String>();
         }
         if(attribute == null){
-            return true;
+            return ;
         }
         if(attribute.getKey() == null || attribute.getValue() == null){
-            return false;
+            //实际中应该使用日志或是其他补偿工具
+            System.out.println("传入属性不完整");
+            System.exit(1);
         }
         String key=attribute.getKey();
         String value=attribute.getValue();
         if(attributes.containsKey(key) && attributes.get(key).equals(value)){
-            return true;
+            return ;
         }else{
             attributes.put(key,value);
-            return true;
+            return ;
         }
     }
 

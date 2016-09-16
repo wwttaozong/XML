@@ -17,7 +17,7 @@ public class Main {
         Main main=new Main();
         Map<String,String> params=main.checkAndParseArgs(args);
 
-        //构造题意中的xml文档
+        //构造题意中的xml文档，构建中产生的一场已经通过“日志”补偿。直接给用户返回构建失败的结果。
         XMLDocument document=new XMLDocument();
         if(params != null){
             if(params.containsKey("encoder") && params.get("encoder") != null){
