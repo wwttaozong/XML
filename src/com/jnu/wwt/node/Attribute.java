@@ -1,4 +1,4 @@
-package com.jnu.wwt;
+package com.jnu.wwt.node;
 
 /**
  * Created by wwt on 2016/9/16.

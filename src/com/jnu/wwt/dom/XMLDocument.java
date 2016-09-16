@@ -1,4 +1,6 @@
-package com.jnu.wwt;
+package com.jnu.wwt.dom;
+
+import com.jnu.wwt.node.Node;
 
 /**
  * Created by wwt on 2016/9/16.

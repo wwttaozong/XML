@@ -1,8 +1,8 @@
 package com.jnu.wwt.entry;
 
-import com.jnu.wwt.Attribute;
-import com.jnu.wwt.Node;
-import com.jnu.wwt.XMLDocument;
+import com.jnu.wwt.node.Attribute;
+import com.jnu.wwt.node.Node;
+import com.jnu.wwt.dom.XMLDocument;
 
 import java.util.HashMap;
 import java.util.Map;

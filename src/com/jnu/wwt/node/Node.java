@@ -1,4 +1,4 @@
-package com.jnu.wwt;
+package com.jnu.wwt.node;
 
 import java.util.*;
 
